@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Language Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 1rem;
+        }
+        main {
+            margin: 2rem;
+        }
+        select {
+            padding: 0.5rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="title">Welcome</h1>
+    </header>
+    <main>
+        <p id="description">This is a simple multi-language webpage.</p>
+        <select id="language-selector">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="ar">العربية</option>
+        </select>
+    </main>
+    <script>
+        // Language content
+        const translations = {
+            en: {
+                title: "Welcome",
+                description: "This is a simple multi-language webpage."
+            },
+            es: {
+                title: "Bienvenido",
+                description: "Esta es una página web multilingüe simple."
+            },
+            fr: {
+                title: "Bienvenue",
+                description: "Ceci est une page Web multilingue simple."
+            },
+            ar: {
+                title: "مرحبا",
+                description: "هذه صفحة ويب بسيطة متعددة اللغات."
+            }
+        };
+
+        // Update content based on selected language
+        const title = document.getElementById("title");
+        const description = document.getElementById("description");
+        const languageSelector = document.getElementById("language-selector");
+
+        languageSelector.addEventListener("change", () => {
+            const selectedLanguage = languageSelector.value;
+            title.textContent = translations[selectedLanguage].title;
+            description.textContent = translations[selectedLanguage].description;
+        });
+    </script>
+</body>
+</html>
